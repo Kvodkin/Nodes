@@ -3,7 +3,7 @@ Packages
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-##Dependencies
+## Dependencies
 ```bash
 sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
 ```
@@ -19,11 +19,11 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-##Moniker, whrite something cool
+## Moniker, whrite something cool
 ```bash
 NODENAME=Do_not_copypaste
 ```
-##Save and import variables
+## Save and import variables
 
 ```bash
 JUNO_PORT=34
@@ -35,7 +35,7 @@ echo "export JUNO_CHAIN_ID=juno-1" >> $HOME/.bash_profile
 echo "export JUNO_PORT=${JUNO_PORT}" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
-Binaries
+## Binaries
 ```bash
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
@@ -44,7 +44,7 @@ git checkout v15.0.0
 make install
 ```
 
-Config app
+## Config app
 
 ```bash
 junod config chain-id $JUNO_CHAIN_ID
@@ -56,25 +56,25 @@ Init app
 junod init $NODENAME --chain-id $JUNO_CHAIN_ID
 ```
 
-Addrbook
+## Addrbook
 
 ```
 wget -O addrbook.json https://snapshots.polkachu.com/addrbook/juno/addrbook.json --inet4-only
 mv addrbook.json ~/.juno/config
 ```
-Genesis
+## Genesis
 
 ```bash
 wget -O genesis.json https://snapshots.polkachu.com/genesis/juno/genesis.json --inet4-only
 mv genesis.json ~/.juno/config
 ```
-Custom ports 
+## Custom ports 
 
 ```bash
 sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${JUNO_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${JUNO_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${JUNO_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${JUNO_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${JUNO_PORT}660\"%" $HOME/.juno/config/config.toml
 sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${JUNO_PORT}317\"%; s%^address = \":8080\"%address = \":${JUNO_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${JUNO_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${JUNO_PORT}091\"%" $HOME/.juno/config/app.toml
 ```
-Pruning
+## Pruning
 
 ```bash
 pruning="custom"
@@ -86,13 +86,13 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_rec
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.juno/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.juno/config/app.toml
 ```
-Indexing 
+## Indexing 
 ```bash
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.juno/config/config.toml
 ```
 
-Minimum gas price
+## Minimum gas price
 
 ```bash
 sed -E -i 's/minimum-gas-prices = \".*\"/minimum-gas-prices = \"0.0025ujunox\"/' $HOME/.juno/config/app.toml
