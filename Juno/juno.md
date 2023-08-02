@@ -1,4 +1,4 @@
-##JUNO
+## JUNO
 Packages
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -7,7 +7,7 @@ sudo apt update && sudo apt upgrade -y
 ```bash
 sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
 ```
-##Go
+## Go
 
 ```bash
 ver="1.19.1" && \
