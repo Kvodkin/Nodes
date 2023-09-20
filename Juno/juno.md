@@ -102,7 +102,7 @@ Reset chain data
 ```bash
 junod tendermint unsafe-reset-all --home $HOME/.juno --keep-addr-book
 ```
-## State-sync
+## State-sync.
 ```
 SNAP_RPC="https://juno-rpc.polkachu.com:443"
 ```
@@ -119,7 +119,7 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.juno/config/config.toml
 ```
 
-## Service
+## Service.
 
 ```bash
 sudo tee /etc/systemd/system/junod.service > /dev/null <<EOF
@@ -138,7 +138,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-## Register and start service
+## Register and start service.
 
 ```bash
 sudo systemctl daemon-reload
