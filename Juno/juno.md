@@ -7,7 +7,7 @@ sudo apt update && sudo apt upgrade -y
 ```bash
 sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
 ```
-## Go
+## Go.
 
 ```bash
 ver="1.19.1" && \
@@ -19,11 +19,11 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-## Moniker, whrite something cool
+## Moniker, whrite something cool.
 ```bash
 NODENAME=Do_not_copypaste
 ```
-## Save and import variables
+## Save and import variables.
 
 ```bash
 JUNO_PORT=34
