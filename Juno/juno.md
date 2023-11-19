@@ -1,9 +1,9 @@
-## JUNO
+## JUNO.
 Packages
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-## Dependencies
+## Dependencies.
 ```bash
 sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
 ```
