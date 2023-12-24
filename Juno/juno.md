@@ -56,13 +56,13 @@ Init app
 junod init $NODENAME --chain-id $JUNO_CHAIN_ID
 ```
 
-## Addrbook
+## Addrbook.
 
 ```
 wget -O addrbook.json https://snapshots.polkachu.com/addrbook/juno/addrbook.json --inet4-only
 mv addrbook.json ~/.juno/config
 ```
-## Genesis
+## Genesis.
 
 ```bash
 wget -O genesis.json https://snapshots.polkachu.com/genesis/juno/genesis.json --inet4-only
