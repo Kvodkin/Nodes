@@ -35,7 +35,7 @@ echo "export JUNO_CHAIN_ID=juno-1" >> $HOME/.bash_profile
 echo "export JUNO_PORT=${JUNO_PORT}" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
-## Binaries
+## Binaries.
 ```bash
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
@@ -44,7 +44,7 @@ git checkout v15.0.0
 make install
 ```
 
-## Config app
+## Config app.
 
 ```bash
 junod config chain-id $JUNO_CHAIN_ID
